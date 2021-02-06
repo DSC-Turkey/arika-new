@@ -1,6 +1,6 @@
-import 'package:arika/exception_handlers/auth_exception_handler.dart';
 import 'package:arika/repository/user_repository.dart';
-import 'package:arika/services/locator.dart';
+import 'package:arika/service/locator.dart';
+import 'package:arika/utils/exception_handlers/auth_exception_handler.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

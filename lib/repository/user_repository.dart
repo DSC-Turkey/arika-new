@@ -1,7 +1,7 @@
-import 'package:arika/models/user_model.dart';
-import 'package:arika/services/auth_service.dart';
-import 'package:arika/services/locator.dart';
-import 'package:arika/services/user_service.dart';
+import 'package:arika/model/user_model.dart';
+import 'package:arika/service/auth_service.dart';
+import 'package:arika/service/locator.dart';
+import 'package:arika/service/user_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserRepository {

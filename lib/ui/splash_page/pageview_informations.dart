@@ -1,4 +1,4 @@
-import 'package:arika/login_pages/sign_up.dart';
+import 'package:arika/ui/auth/sign_up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

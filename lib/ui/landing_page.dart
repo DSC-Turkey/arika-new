@@ -1,6 +1,6 @@
-import 'package:arika/home_page.dart';
 import 'package:arika/provider/auth_provider.dart';
-import 'package:arika/splash_screens/splash_pages.dart';
+import 'package:arika/ui/home_page.dart';
+import 'package:arika/ui/splash_page/splash_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

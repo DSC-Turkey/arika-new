@@ -1,5 +1,5 @@
-import 'package:arika/login_pages/login.dart';
-import 'package:arika/splash_screens/pageview_bilgiler.dart';
+import 'package:arika/ui/auth/login.dart';
+import 'package:arika/ui/splash_page/pageview_informations.dart';
 import 'package:flutter/material.dart';
 
 class SplashPages extends StatefulWidget {

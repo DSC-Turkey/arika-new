@@ -1,4 +1,4 @@
-import 'package:arika/models/user_model.dart';
+import 'package:arika/model/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserService {

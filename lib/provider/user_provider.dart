@@ -1,6 +1,6 @@
-import 'package:arika/models/user_model.dart';
+import 'package:arika/model/user_model.dart';
 import 'package:arika/repository/user_repository.dart';
-import 'package:arika/services/locator.dart';
+import 'package:arika/service/locator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

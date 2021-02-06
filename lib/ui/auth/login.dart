@@ -1,10 +1,10 @@
-import 'package:arika/common_widgets/ekran_dokunma_klavye_kapanma.dart';
-import 'package:arika/common_widgets/text_alani.dart';
-import 'package:arika/exception_handlers/auth_exception_handler.dart';
-import 'package:arika/landing_page.dart';
-import 'package:arika/login_pages/forgot_password_page.dart';
-import 'package:arika/login_pages/sign_up.dart';
+import 'package:arika/config/base/close_keyboard.dart';
+import 'package:arika/config/base/text_area.dart';
 import 'package:arika/provider/auth_provider.dart';
+import 'package:arika/ui/auth/forgot_password_page.dart';
+import 'package:arika/ui/auth/sign_up.dart';
+import 'package:arika/ui/landing_page.dart';
+import 'package:arika/utils/exception_handlers/auth_exception_handler.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

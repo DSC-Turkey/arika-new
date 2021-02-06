@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:arika/landing_page.dart';
+import 'package:arika/ui/landing_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

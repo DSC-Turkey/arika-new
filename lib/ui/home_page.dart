@@ -1,6 +1,6 @@
-import 'package:arika/exception_handlers/auth_exception_handler.dart';
-import 'package:arika/landing_page.dart';
 import 'package:arika/provider/auth_provider.dart';
+import 'package:arika/ui/landing_page.dart';
+import 'package:arika/utils/exception_handlers/auth_exception_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
