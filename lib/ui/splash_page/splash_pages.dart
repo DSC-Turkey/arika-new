@@ -48,28 +48,37 @@ class _SplashPagesState extends State<SplashPages> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          PageView.builder(
-            scrollDirection: Axis.horizontal,
-            onPageChanged: _onchanged,
-            controller: _controller,
-            itemCount: _pages.length,
-            itemBuilder: (context, int index) {
-              return _pages[index];
-            },
+      //backgroundColor: Color(0xFF97A7C3), //Colors.white,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [ Color(0xFF1252C2),  Color(0xFFFFFFFF)],
           ),
-          animationContainer(size),
-          loginButton(size),
-        ],
+        ),
+        child: Stack(
+          children: [
+            PageView.builder(
+              scrollDirection: Axis.horizontal,
+              onPageChanged: _onchanged,
+              controller: _controller,
+              itemCount: _pages.length,
+              itemBuilder: (context, int index) {
+                return _pages[index];
+              },
+            ),
+            animationContainer(size),
+            //loginButton(size),
+          ],
+        ),
       ),
     );
   }
 
   Positioned animationContainer(Size size) {
     return Positioned(
-      bottom: size.height * 0.28,
+      top: size.height * 0.8,
       child: Container(
         width: size.width,
         alignment: Alignment.center,
@@ -81,14 +90,14 @@ class _SplashPagesState extends State<SplashPages> {
               children: List<Widget>.generate(_pages.length, (int index) {
                 return AnimatedContainer(
                   duration: Duration(milliseconds: 300),
-                  height: 5,
-                  width: (index == _currentPage) ? 20 : 10,
+                  height: 15,
+                  width:15,// (index == _currentPage) ? 20 : 10,
                   margin: EdgeInsets.symmetric(horizontal: 5),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       color: (index == _currentPage)
-                          ? Colors.blue
-                          : Colors.blue.withOpacity(0.3)),
+                          ? Colors.indigo[900]
+                          : Colors.indigo[900].withOpacity(0.3)),
                 );
               }),
             )
@@ -100,7 +109,7 @@ class _SplashPagesState extends State<SplashPages> {
 
   Positioned loginButton(Size size) {
     return Positioned(
-      bottom: size.height * 0.066,
+      top: size.height * 0.9,
       child: Container(
         width: size.width,
         alignment: Alignment.center,
