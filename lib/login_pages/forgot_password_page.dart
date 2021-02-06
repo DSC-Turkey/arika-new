@@ -3,6 +3,7 @@ import 'package:arika/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
 class ForgotPassword extends StatefulWidget {
   final BuildContext context;
 
@@ -107,8 +108,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   AuthExceptionHandler.generateExceptionMessage(value);
               showAlertDialog(errorMsg);
             } else {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text("Şifre sıfırlama linki gönderilmiştir")));
+              
+              // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              //     content: Text("Şifre sıfırlama linki gönderilmiştir")));
             }
           });
         }
