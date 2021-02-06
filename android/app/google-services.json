@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "499834126774",
+    "project_id": "arika-1e873",
+    "storage_bucket": "arika-1e873.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499834126774:android:a60af86c1b7522036bc117",
+        "android_client_info": {
+          "package_name": "com.arika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499834126774-db8hnt7ddvk578f9f099oom6mb397k8k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arika",
+            "certificate_hash": "d9cc98ea15d9b86fca3af930404648f054542fed"
+          }
+        },
+        {
+          "client_id": "499834126774-8v6ub62h432m7plt84romu9f4nk11rs5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqIULteFEGskRCXRTNAxjqJued5ZCc5yo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499834126774-8v6ub62h432m7plt84romu9f4nk11rs5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
