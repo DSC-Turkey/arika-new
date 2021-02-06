@@ -20,8 +20,8 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               _authProvider.signOut().then((value) {
                 if (value != AuthResultStatus.successful) {
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text(value)));
+                  // ScaffoldMessenger.of(context)
+                  //     .showSnackBar(SnackBar(content: Text(value)));
                 } else {
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(builder: (context) => LandingPage()),
