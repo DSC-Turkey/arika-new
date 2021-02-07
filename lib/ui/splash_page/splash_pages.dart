@@ -1,4 +1,4 @@
-import 'package:arika/ui/auth/login.dart';
+//import 'package:arika/ui/auth/login.dart';
 import 'package:arika/ui/splash_page/pageview_informations.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +54,7 @@ class _SplashPagesState extends State<SplashPages> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [ Color(0xFF1252C2),  Color(0xFFFFFFFF)],
+            colors: [Color(0xFF1252C2), Color(0xFFFFFFFF)],
           ),
         ),
         child: Stack(
@@ -91,7 +91,7 @@ class _SplashPagesState extends State<SplashPages> {
                 return AnimatedContainer(
                   duration: Duration(milliseconds: 300),
                   height: 15,
-                  width:15,// (index == _currentPage) ? 20 : 10,
+                  width: 15, // (index == _currentPage) ? 20 : 10,
                   margin: EdgeInsets.symmetric(horizontal: 5),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -129,12 +129,10 @@ class _SplashPagesState extends State<SplashPages> {
               width: 7,
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Login(
-                          context: context,
-                        )));
-              },
+              // onTap: () {
+              //   Navigator.of(context).push(MaterialPageRoute(
+              //       builder: (context) => Login(context: context),));
+              // },
               child: Text(
                 "Giriş Yap",
                 style: TextStyle(

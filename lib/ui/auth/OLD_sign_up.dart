@@ -1,7 +1,7 @@
 import 'package:arika/config/base/close_keyboard.dart';
 import 'package:arika/config/base/text_area.dart';
 import 'package:arika/provider/auth_provider.dart';
-import 'package:arika/ui/auth/login.dart';
+//import 'package:arika/ui/auth/login.dart';
 import 'package:arika/ui/landing_page.dart';
 import 'package:arika/utils/exception_handlers/auth_exception_handler.dart';
 import 'package:flutter/gestures.dart';
@@ -106,11 +106,11 @@ class _SignUpState extends State<SignUp> {
                 text: " Giriş Yap",
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Login(
-                        context: context,
-                      ),
-                    ));
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //   builder: (context) => Login(
+                    //     context: context,
+                    //   ),
+                    // ));
                   },
                 style: TextStyle(
                     fontWeight: FontWeight.bold,

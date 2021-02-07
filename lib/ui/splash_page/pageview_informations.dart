@@ -1,4 +1,5 @@
-import 'package:arika/ui/auth/sign_up.dart';
+//import 'package:arika/ui/auth/sign_up.dart';
+import 'package:arika/ui/auth/chose.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,8 @@ class PageViewInformations extends StatelessWidget {
         photoPart(size),
         content(size),
         //descriptionPart(size),
-        //if (index == 2) signUpButton(context, size),
+        if (index == 2) startUsing(context, size)
+        // signUpButton(context, size),
         //yanSayfayaGecme(size),
       ],
     );
@@ -126,20 +128,17 @@ class PageViewInformations extends StatelessWidget {
   //     ),
   //   );
   // }
-
-  signUpButton(BuildContext context, Size size) {
+  startUsing(BuildContext context, Size size) {
     return Positioned(
-      bottom: size.height * 0.15,
-      right: size.width * 0.1,
+      top: size.height * 0.85,
       left: size.width * 0.1,
+      right: size.width * 0.1,
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => SignUp(
-                context: context,
-              ),
-            ),
+                builder: (context) => Chose(), //SignUp(context: context),
+                ),
           );
         },
         child: Container(
@@ -151,7 +150,7 @@ class PageViewInformations extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            "Hesap Oluştur",
+            "Kullanmaya Başla",
             style: TextStyle(
               color: Colors.white,
               fontSize: 19,
@@ -162,4 +161,40 @@ class PageViewInformations extends StatelessWidget {
       ),
     );
   }
+
+  // signUpButton(BuildContext context, Size size) {
+  //   return Positioned(
+  //     bottom: size.height * 0.15,
+  //     right: size.width * 0.1,
+  //     left: size.width * 0.1,
+  //     child: GestureDetector(
+  //       onTap: () {
+  //         Navigator.of(context).push(
+  //           MaterialPageRoute(
+  //             builder: (context) => SignUp(
+  //               context: context,
+  //             ),
+  //           ),
+  //         );
+  //       },
+  //       child: Container(
+  //         padding: EdgeInsets.symmetric(vertical: size.height * 0.024),
+  //         decoration: BoxDecoration(
+  //           border: Border.all(color: Color(0xff707070), width: 0.2),
+  //           borderRadius: BorderRadius.circular(10),
+  //           color: Colors.blue.shade800,
+  //         ),
+  //         alignment: Alignment.center,
+  //         child: Text(
+  //           "Hesap Oluştur",
+  //           style: TextStyle(
+  //             color: Colors.white,
+  //             fontSize: 19,
+  //             fontWeight: FontWeight.bold,
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }

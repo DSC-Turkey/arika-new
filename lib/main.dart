@@ -1,7 +1,8 @@
 import 'package:arika/provider/auth_provider.dart';
 import 'package:arika/provider/user_provider.dart';
 import 'package:arika/service/locator.dart';
-import 'package:arika/ui/splash_page/splash_screen.dart';
+import 'package:arika/ui/landing_page.dart';
+//import 'package:arika/ui/splash_page/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SplashScreen(),
+        home: LandingPage(),//SplashScreen(),
       ),
     );
   }

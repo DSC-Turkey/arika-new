@@ -1,8 +1,8 @@
 import 'package:arika/config/base/close_keyboard.dart';
 import 'package:arika/config/base/text_area.dart';
 import 'package:arika/provider/auth_provider.dart';
-import 'package:arika/ui/auth/forgot_password_page.dart';
-import 'package:arika/ui/auth/sign_up.dart';
+// import 'package:arika/ui/auth/forgot_password_page.dart';
+// import 'package:arika/ui/auth/sign_up.dart';
 import 'package:arika/ui/landing_page.dart';
 import 'package:arika/utils/exception_handlers/auth_exception_handler.dart';
 import 'package:flutter/gestures.dart';
@@ -89,10 +89,10 @@ class _LoginState extends State<Login> {
   GestureDetector signUpButton(BuildContext context, Size size) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => SignUp(
-                  context: context,
-                )));
+        // Navigator.of(context).push(MaterialPageRoute(
+        //     builder: (context) => SignUp(
+        //           context: context,
+        //         )));
       },
       child: Container(
         width: size.width,
@@ -109,10 +109,10 @@ class _LoginState extends State<Login> {
                   text: " Üye Ol",
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SignUp(
-                                context: context,
-                              )));
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //     builder: (context) => SignUp(
+                      //           context: context,
+                      //         )));
                     },
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -211,8 +211,8 @@ class _LoginState extends State<Login> {
       alignment: Alignment.centerRight,
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ForgotPassword()));
+          // Navigator.of(context)
+          //     .push(MaterialPageRoute(builder: (context) => ForgotPassword()));
         },
         child: Material(
           color: Colors.transparent,
