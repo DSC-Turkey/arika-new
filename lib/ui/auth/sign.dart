@@ -18,7 +18,6 @@ class _SignState extends State<Sign> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Stack(
         children: [
@@ -26,10 +25,20 @@ class _SignState extends State<Sign> {
           logo(size, size.height * 0.05, 0),
           card(size, size.height * 0.2, size.width * 0.1),
           image(size, size.height * 0.85, size.width * 0.5),
+          Positioned(
+              top: size.height * 0.7,
+              width: size.width,
+              child: Center(
+                  child: Text('Ya Da',
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)))),
+          fastLogIn(size, size.height * 0.75),
+          submitButton(size, _isLogIn,isTeacher, size.height * 0.6),
         ],
       ),
     );
   }
+
 
   background(Size size, double x, double y) {
     return Positioned(
@@ -128,17 +137,14 @@ class _SignState extends State<Sign> {
                 });
               },
             ),
-            logInSignUp(size,_isLogIn),
-            // _isLogIn ? logIn(formKey) : signUp(),
+            logInSignUp(size, _isLogIn),
           ],
         ),
       ),
     );
   }
 
-  logInSignUp(size,isLogIn) {
-    final formKey = GlobalKey<FormState>();
-    String email, password;
+  logInSignUp(size, isLogIn) {
     return Container(
       child: Form(
         key: formKey,
@@ -146,71 +152,195 @@ class _SignState extends State<Sign> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            emailPart(size,email),
-            // passwordPart(size),
-            // forgotPasswordPart(size),
-            // loginButton(size),
-            // signUpButton(context, size),
+            if (isLogIn == false) namePart(size),
+            emailPart(size, isLogIn),
+            passwordPart(size),
           ],
         ),
       ),
     );
   }
 
-  logIn(formKey) {
-    return Container(
-      child: Form(
-        key: formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // emailPart(size),
-            // passwordPart(size),
-            // forgotPasswordPart(size),
-            // loginButton(size),
-            // signUpButton(context, size),
-          ],
-        ),
-      ),
-    );
-  }
-
-  signUp() {}
-
-  emailPart(Size size,String email) {
-    return Container(
-      margin:
-          EdgeInsets.only(top: size.height * 0.13, bottom: size.height * 0.02),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.only(bottom: size.height * 0.01),
-            child: Text(
-              "Email",
-              style: TextStyle(
-                  color: Color(0xff969AA8),
-                  fontSize: 15,
-                  fontFamily: "PoppinsRegular"),
+  submitButton(Size size, bool isLogIn,bool isTeacher, double x) {
+    return Positioned(
+      top: x,
+      width: size.width,
+      child: GestureDetector(
+        onTap: () {
+          submit(isLogIn,isTeacher);
+        },
+        child: Container(
+          width: size.width * 0.6,
+          height: size.height * 0.06,
+          margin: EdgeInsets.only(
+              left: size.width * 0.15, right: size.width * 0.15),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            color: Color(0xFF193566),
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            isLogIn ? "Log In" : "Sign Up",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          TextArea(
-            textInputType: TextInputType.emailAddress,
-            obsecureText: false,
-            onSaved: (gelenEmail) {
-              email = gelenEmail;
-            },
-            validator: (gelenEmail) {
-              if (gelenEmail.isEmpty) {
-                return "Bu alan boş bırakılamaz";
-              } else
-                return null;
-            },
-            hintText: "Email",
-          ),
-        ],
+        ),
       ),
     );
+  }
+
+  namePart(Size size) {
+    return Container(
+      width: size.width * 0.7,
+      padding: EdgeInsets.only(left: 10),
+      margin: EdgeInsets.only(top: 40, left: 10, right: 10),
+      decoration: BoxDecoration(
+        color: Color(0xffe0e0e0),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextFormField(
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: 'Adı Soyadı',
+          ),
+          keyboardType: TextInputType.emailAddress,
+          validator: (input) =>
+              _userNameValidation(input) == false ? 'Hatalı Adı' : null,
+          onSaved: (input) {
+            _data['name'] = input;
+          },
+          onChanged: (input) {
+            _data['name'] = input;
+          }),
+    );
+  }
+
+  bool _userNameValidation(String value) {
+    String pattern = r'^[0-9a-zA-ZğüşöçıĞÜŞÖÇİ.]{6,15}$';
+    RegExp regExp = RegExp(pattern);
+    return regExp.hasMatch(value);
+  }
+
+  emailPart(Size size, bool isLogIn) {
+    return Container(
+      width: size.width * 0.7,
+      padding: EdgeInsets.only(left: 10),
+      margin: EdgeInsets.only(top: isLogIn ? 40 : 10, left: 10, right: 10),
+      decoration: BoxDecoration(
+        color: Color(0xffe0e0e0),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextFormField(
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: 'Email',
+          ),
+          keyboardType: TextInputType.emailAddress,
+          validator: (input) => !input.contains('@') ? 'Hatalı Email' : null,
+          onSaved: (input) {
+            _data['email'] = input;
+          },
+          onChanged: (input) {
+            _data['email'] = input;
+          }),
+    );
+  }
+
+  passwordPart(Size size) {
+    return Container(
+      width: size.width * 0.7,
+      padding: EdgeInsets.only(left: 10),
+      margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+      decoration: BoxDecoration(
+        color: Color(0xffe0e0e0),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextFormField(
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: 'Şifra',
+          ),
+          keyboardType: TextInputType.emailAddress,
+          validator: (input) =>
+              _passwordValidation(input) == false ? 'hatalı Şifra' : null,
+          onSaved: (input) {
+            _data['password'] = input;
+          },
+          onChanged: (input) {
+            _data['password'] = input;
+          }),
+    );
+  }
+
+  bool _passwordValidation(String value) {
+    // Password must contain at least one uppercase character one lowercase character and one number and between 8-30
+    String pattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,30}$';
+    RegExp regExp = RegExp(pattern);
+    return regExp.hasMatch(value);
+  }
+
+
+
+  fastLogIn(Size size, double x) {
+    return Positioned(
+      width: size.width,
+      height: size.height * 0.05,
+      top: x,
+      child: Container(
+        width: size.width / 2,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              child: GestureDetector(
+                onTap: google,
+                child: SvgPicture.asset('assets/images/google.svg'),
+              ),
+              width: 50,
+            ),
+            Container(
+              width: 50,
+              child: GestureDetector(
+                onTap: twitter,
+                child: SvgPicture.asset('assets/images/twitter.svg'),
+              ),
+            ),
+            Container(
+              width: 50,
+              child: GestureDetector(
+                onTap: facebook,
+                child: SvgPicture.asset('assets/images/facebook.svg'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+
+
+
+
+  final formKey = GlobalKey<FormState>();
+  Map _data = {'email': '', 'password': '', 'name': ''};
+  String email, password;
+
+
+
+
+  google() {}
+  facebook() {}
+  twitter() {}
+  submit(isLogIn,isTeacher) {
+    print('****************************************');
+    if (formKey.currentState.validate()) {
+      formKey.currentState.save();
+      print(_data);
+    }
   }
 }
