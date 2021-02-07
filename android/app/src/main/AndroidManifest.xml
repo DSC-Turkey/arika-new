@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arika">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="arika"
         android:icon="@mipmap/ic_launcher">
@@ -37,5 +38,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <meta-data
+           android:name="com.google.android.gms.ads.APPLICATION_ID"
+           android:value="ca-app-pub-7320294568722835~4243201410"/>
     </application>
 </manifest>
