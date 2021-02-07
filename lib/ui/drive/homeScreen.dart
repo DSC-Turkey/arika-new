@@ -7,6 +7,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  
   double xOffset = 0;
   double yOffset = 0;
   double scaleFactor = 1;
@@ -29,7 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
       // child 
-      
        SingleChildScrollView(
         child: Column(
           children: [
