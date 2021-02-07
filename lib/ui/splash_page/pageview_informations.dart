@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-//import 'package:arika/ui/auth/sign_up.dart';
->>>>>>> master/master
 import 'package:arika/ui/auth/chose.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +27,7 @@ class PageViewInformations extends StatelessWidget {
         if (index == 2) startUsing(context, size)
         // signUpButton(context, size),
         //yanSayfayaGecme(size),
-        signUpButton(context, size),
+        // signUpButton(context, size),
       ],
     );
   }
@@ -134,25 +130,15 @@ class PageViewInformations extends StatelessWidget {
   // }
   startUsing(BuildContext context, Size size) {
     return Positioned(
-<<<<<<< HEAD
       bottom: size.height * 0.05,
       right: size.width * 0.1,
-=======
-      top: size.height * 0.85,
->>>>>>> master/master
       left: size.width * 0.1,
-      right: size.width * 0.1,
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-<<<<<<< HEAD
               builder: (context) => Chose(),
             ),
-=======
-                builder: (context) => Chose(), //SignUp(context: context),
-                ),
->>>>>>> master/master
           );
         },
         child: Container(
