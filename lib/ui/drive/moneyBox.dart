@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import 'package:arika/ui/pay.dart';
 import 'package:flutter/material.dart';
-=======
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
->>>>>>> master/master
 
 class MoneyBox extends StatefulWidget {
   @override
@@ -16,14 +11,11 @@ class _MoneyBoxState extends State<MoneyBox> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-<<<<<<< HEAD
       appBar: AppBar(
         backgroundColor: Color(0xFF1252C2),
         elevation: 0,
         title: Text(""),
       ),
-=======
->>>>>>> master/master
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -42,11 +34,7 @@ class _MoneyBoxState extends State<MoneyBox> {
             Container(
               child: Center(
                 child: Text(
-<<<<<<< HEAD
                   'Eğitim ihtiyacı olan çocuklar için bağış yapmak istemez misiniz?',
-=======
-                  'vaervaervaervjkarbvbrivbaebrv;abure;vba;eruvb',
->>>>>>> master/master
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -88,11 +76,7 @@ class _MoneyBoxState extends State<MoneyBox> {
     );
   }
 
-<<<<<<< HEAD
   donat() {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Pay()));
   }
-=======
-  donat() {}
->>>>>>> master/master
 }

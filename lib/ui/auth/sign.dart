@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 import 'package:arika/provider/auth_provider.dart';
-import 'package:arika/ui/drive/orgin.dart';
 import 'package:arika/ui/landing_page.dart';
 import 'package:arika/utils/exception_handlers/auth_exception_handler.dart';
 import 'package:flutter/material.dart';
@@ -8,23 +6,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:provider/provider.dart';
 
+import '../../provider/auth_provider.dart';
+
 class Sign extends StatefulWidget {
   final bool isTeacher;
   final BuildContext context;
 
   Sign({Key key, this.isTeacher, this.context}) : super(key: key);
 
-=======
-import 'package:arika/config/base/text_area.dart';
-import 'package:arika/ui/drive/orgin.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
-
-class Sign extends StatefulWidget {
-  final bool isTeacher;
-  const Sign({Key key, this.isTeacher}) : super(key: key);
->>>>>>> master/master
   @override
   _SignState createState() => _SignState(isTeacher: isTeacher);
 }
@@ -32,17 +21,12 @@ class Sign extends StatefulWidget {
 class _SignState extends State<Sign> {
   final bool isTeacher;
   bool _isLogIn = true;
-<<<<<<< HEAD
-
-=======
->>>>>>> master/master
   _SignState({Key key, this.isTeacher});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-<<<<<<< HEAD
       body: SingleChildScrollView(
         child: Container(
           width: size.width,
@@ -65,11 +49,6 @@ class _SignState extends State<Sign> {
               ),
               fastLogIn(size, size.height * 0.77),
               submitButton(size, _isLogIn, isTeacher, size.height * 0.64),
-              Positioned(
-                child: goToDrive(),
-                top: size.height * 0.9,
-                left: 0,
-              ),
               Consumer<AuthProvider>(
                 builder: (_, model, child) {
                   return model.isLoading
@@ -87,25 +66,6 @@ class _SignState extends State<Sign> {
             ],
           ),
         ),
-=======
-      body: Stack(
-        children: [
-          background(size, -size.height * 0.3, -size.width * 0.2),
-          logo(size, size.height * 0.05, 0),
-          card(size, size.height * 0.2, size.width * 0.1),
-          image(size, size.height * 0.85, size.width * 0.5),
-          Positioned(
-              top: size.height * 0.72,
-              width: size.width,
-              child: Center(
-                  child: Text('Ya Da',
-                      style: TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold)))),
-          fastLogIn(size, size.height * 0.77),
-          submitButton(size, _isLogIn, isTeacher, size.height * 0.64),
-          Positioned(child: goToDrive(),top: size.height*0.9,left: 0,)
-        ],
->>>>>>> master/master
       ),
     );
   }
@@ -277,14 +237,9 @@ class _SignState extends State<Sign> {
             hintText: 'Adı Soyadı',
           ),
           keyboardType: TextInputType.emailAddress,
-<<<<<<< HEAD
           validator: (input) => _userNameValidation(input) == false
               ? 'Lütfen en az 5 karakter giriniz'
               : null,
-=======
-          validator: (input) =>
-              _userNameValidation(input) == false ? 'Hatalı Adı' : null,
->>>>>>> master/master
           onSaved: (input) {
             _data['name'] = input;
           },
@@ -295,7 +250,6 @@ class _SignState extends State<Sign> {
   }
 
   bool _userNameValidation(String value) {
-<<<<<<< HEAD
     if (value.length < 5) {
       return false;
     } else
@@ -303,11 +257,6 @@ class _SignState extends State<Sign> {
     //String pattern = r'^[0-9a-zA-ZğüşöçıĞÜŞÖÇİ.]{6,15}$';
     //RegExp regExp = RegExp(pattern);
     //return regExp.hasMatch(value);
-=======
-    String pattern = r'^[0-9a-zA-ZğüşöçıĞÜŞÖÇİ.]{6,15}$';
-    RegExp regExp = RegExp(pattern);
-    return regExp.hasMatch(value);
->>>>>>> master/master
   }
 
   emailPart(Size size, bool isLogIn) {
@@ -410,7 +359,6 @@ class _SignState extends State<Sign> {
   Map _data = {'email': '', 'password': '', 'name': ''};
   String email, password;
 
-<<<<<<< HEAD
   google() {
     showAlertDialog("Yakında aktif olacaktır");
   }
@@ -485,40 +433,6 @@ class _SignState extends State<Sign> {
           }
         });
       }
-=======
-  google() {}
-  facebook() {}
-  twitter() {}
-
-  submit(isLogIn, isTeacher) {
-    print('****************************************');
-    if (formKey.currentState.validate()) {
-      formKey.currentState.save();
-      print(_data);
->>>>>>> master/master
     }
-  }
-
-  goToDrive() {
-    return RaisedButton.icon(
-      label: Text('Go to Drive'),
-      icon: Icon(Icons.run_circle_rounded),
-      onPressed: () {
-<<<<<<< HEAD
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => Orgin(), //SignUp(context: context),
-          ),
-        );
-=======
-                  Navigator.of(context).push(
-            MaterialPageRoute(
-                builder: (context) =>Orgin(), //SignUp(context: context),
-                ),
-          );
-        
->>>>>>> master/master
-      },
-    );
   }
 }

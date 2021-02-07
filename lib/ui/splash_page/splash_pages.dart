@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-//import 'package:arika/ui/auth/login.dart';
->>>>>>> master/master
 import 'package:arika/ui/splash_page/pageview_informations.dart';
 import 'package:flutter/material.dart';
 
@@ -102,8 +98,6 @@ class _SplashPagesState extends State<SplashPages> {
                           : Colors.indigo[900].withOpacity(0.3)),
                 );
               }),
-<<<<<<< HEAD
-=======
             )
           ],
         ),
@@ -146,7 +140,6 @@ class _SplashPagesState extends State<SplashPages> {
                   fontFamily: "PoppinsRegular",
                 ),
               ),
->>>>>>> master/master
             ),
           ],
         ),
