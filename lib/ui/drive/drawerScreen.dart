@@ -1,3 +1,6 @@
+import 'package:arika/ui/drive/aboutUs.dart';
+import 'package:arika/ui/drive/moneyBox.dart';
+import 'package:arika/ui/drive/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -52,10 +55,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                myRow('assets/images/knowledge.svg', 'Dersler', classes),
-                myRow('assets/images/addition.svg', 'Matematik', math),
-                myRow('assets/images/english.svg', 'Inglizce', english),
-                myRow('assets/images/book.svg', 'Okuma', reading),
+                myRow('assets/images/profile.svg', 'Profil', profile),
+                myRow('assets/images/moneybox.svg', 'Kumbara', moneyBox),
+                myRow('assets/images/aboutUs.svg', 'Hakkımızda', aboutUs),
+                myRow('assets/images/contact.svg', 'İletişim', contact),
               ],
             ),
           ),
@@ -134,10 +137,21 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   logOut() {}
   settings() {}
-  classes() {}
-  math() {}
-  english() {}
-  reading() {}
 
-  
+  profile() {
+    // Navigator.of(context)
+    //     .push(MaterialPageRoute(builder: (context) => Profile()));
+  }
+
+  moneyBox() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MoneyBox()));
+  }
+
+  aboutUs() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => AboutUs()));
+  }
+
+  contact() {}
 }
