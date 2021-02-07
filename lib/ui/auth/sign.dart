@@ -1,4 +1,5 @@
 import 'package:arika/config/base/text_area.dart';
+import 'package:arika/ui/drive/drive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
@@ -26,19 +27,19 @@ class _SignState extends State<Sign> {
           card(size, size.height * 0.2, size.width * 0.1),
           image(size, size.height * 0.85, size.width * 0.5),
           Positioned(
-              top: size.height * 0.7,
+              top: size.height * 0.72,
               width: size.width,
               child: Center(
                   child: Text('Ya Da',
                       style: TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold)))),
-          fastLogIn(size, size.height * 0.75),
-          submitButton(size, _isLogIn,isTeacher, size.height * 0.6),
+          fastLogIn(size, size.height * 0.77),
+          submitButton(size, _isLogIn, isTeacher, size.height * 0.64),
+          Positioned(child: goToDrive(),top: size.height*0.9,left: 0,)
         ],
       ),
     );
   }
-
 
   background(Size size, double x, double y) {
     return Positioned(
@@ -161,13 +162,13 @@ class _SignState extends State<Sign> {
     );
   }
 
-  submitButton(Size size, bool isLogIn,bool isTeacher, double x) {
+  submitButton(Size size, bool isLogIn, bool isTeacher, double x) {
     return Positioned(
       top: x,
       width: size.width,
       child: GestureDetector(
         onTap: () {
-          submit(isLogIn,isTeacher);
+          submit(isLogIn, isTeacher);
         },
         child: Container(
           width: size.width * 0.6,
@@ -277,12 +278,10 @@ class _SignState extends State<Sign> {
 
   bool _passwordValidation(String value) {
     // Password must contain at least one uppercase character one lowercase character and one number and between 8-30
-    String pattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,30}$';
+    String pattern = r'^(?=.*?[a-zA-Z0-9]).{8,30}$';
     RegExp regExp = RegExp(pattern);
     return regExp.hasMatch(value);
   }
-
-
 
   fastLogIn(Size size, double x) {
     return Positioned(
@@ -322,25 +321,34 @@ class _SignState extends State<Sign> {
     );
   }
 
-
-
-
-
   final formKey = GlobalKey<FormState>();
   Map _data = {'email': '', 'password': '', 'name': ''};
   String email, password;
 
-
-
-
   google() {}
   facebook() {}
   twitter() {}
-  submit(isLogIn,isTeacher) {
+
+  submit(isLogIn, isTeacher) {
     print('****************************************');
     if (formKey.currentState.validate()) {
       formKey.currentState.save();
       print(_data);
     }
+  }
+
+  goToDrive() {
+    return RaisedButton.icon(
+      label: Text('Go to Drive'),
+      icon: Icon(Icons.run_circle_rounded),
+      onPressed: () {
+                  Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (context) =>Drive(), //SignUp(context: context),
+                ),
+          );
+        
+      },
+    );
   }
 }
