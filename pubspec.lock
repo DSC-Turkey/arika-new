@@ -249,6 +249,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.7+2"
+<<<<<<< HEAD
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -256,13 +257,19 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.11"
+=======
+>>>>>>> master/master
   flutter_svg:
     dependency: "direct main"
     description:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "0.19.2+1"
+=======
+    version: "0.19.1"
+>>>>>>> master/master
   flutter_test:
     dependency: transitive
     description: flutter
@@ -438,6 +445,23 @@ packages:
       name: path_parsing
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
+=======
+    version: "1.8.0-nullsafety.1"
+  path_drawing:
+    dependency: transitive
+    description:
+      name: path_drawing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1+1"
+  path_parsing:
+    dependency: transitive
+    description:
+      name: path_parsing
+      url: "https://pub.dartlang.org"
+    source: hosted
+>>>>>>> master/master
     version: "0.1.4"
   path_provider:
     dependency: transitive

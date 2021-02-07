@@ -70,7 +70,10 @@ class Chose extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => Sign(
                       isTeacher: false,
+<<<<<<< HEAD
                       context: context,
+=======
+>>>>>>> master/master
                     ),
                   ),
                 );
@@ -80,7 +83,10 @@ class Chose extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => Sign(
                       isTeacher: true,
+<<<<<<< HEAD
                       context: context,
+=======
+>>>>>>> master/master
                     ),
                   ),
                 );

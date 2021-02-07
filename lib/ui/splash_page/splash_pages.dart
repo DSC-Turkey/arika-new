@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+//import 'package:arika/ui/auth/login.dart';
+>>>>>>> master/master
 import 'package:arika/ui/splash_page/pageview_informations.dart';
 import 'package:flutter/material.dart';
 
@@ -98,6 +102,51 @@ class _SplashPagesState extends State<SplashPages> {
                           : Colors.indigo[900].withOpacity(0.3)),
                 );
               }),
+<<<<<<< HEAD
+=======
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Positioned loginButton(Size size) {
+    return Positioned(
+      top: size.height * 0.9,
+      child: Container(
+        width: size.width,
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Hesabım Var",
+              style: TextStyle(
+                color: Color(0xff969AA8),
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                fontFamily: "PoppinsRegular",
+              ),
+            ),
+            SizedBox(
+              width: 7,
+            ),
+            GestureDetector(
+              // onTap: () {
+              //   Navigator.of(context).push(MaterialPageRoute(
+              //       builder: (context) => Login(context: context),));
+              // },
+              child: Text(
+                "Giriş Yap",
+                style: TextStyle(
+                  color: Colors.blue.shade800,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  fontFamily: "PoppinsRegular",
+                ),
+              ),
+>>>>>>> master/master
             ),
           ],
         ),
