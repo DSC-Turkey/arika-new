@@ -40,16 +40,12 @@ dependencies:
   flutter_svg:
   flutter_toggle_tab: "^0.0.1+2"
   flutter_inner_drawer:
-<<<<<<< HEAD
   chewie: ^0.12.2
   firebase_admob: ^0.11.0+1
   image_picker: ^0.6.7+22
   url_launcher: ^5.7.10
   flutter_credit_card: ^0.1.4
 
-=======
-    
->>>>>>> master/master
 # dev_dependencies:
 #   flutter_test:
 #     sdk: flutter
