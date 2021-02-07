@@ -40,7 +40,8 @@ dependencies:
   integration_test: ^1.0.2+2
   flutter_svg:
   flutter_toggle_tab: "^0.0.1+2"
-  
+  flutter_inner_drawer:
+    
 # dev_dependencies:
 #   flutter_test:
 #     sdk: flutter
@@ -71,6 +72,10 @@ flutter:
     - assets/images/facebook.svg
     - assets/images/google.svg
     - assets/images/twitter.svg
+    - assets/images/addition.svg
+    - assets/images/book.svg
+    - assets/images/english.svg
+    - assets/images/user.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

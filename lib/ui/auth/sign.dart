@@ -1,5 +1,5 @@
 import 'package:arika/config/base/text_area.dart';
-import 'package:arika/ui/drive/drive.dart';
+import 'package:arika/ui/drive/orgin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
@@ -344,7 +344,7 @@ class _SignState extends State<Sign> {
       onPressed: () {
                   Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (context) =>Drive(), //SignUp(context: context),
+                builder: (context) =>Orgin(), //SignUp(context: context),
                 ),
           );
         
